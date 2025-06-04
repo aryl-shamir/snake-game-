@@ -28,7 +28,7 @@ snake-game/
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/yourusername/snake-game.git
+git clone https://github.com/aryl-shamir/snake-game.git
 cd snake-game
 ```
 
@@ -98,7 +98,7 @@ This game was built step-by-step following a TODO list:
 ## 👨‍💻 Author
 
 **Your Name**  
-GitHub: [@yourgithubusername](https://github.com/yourgithubusername)
+GitHub: [@aryl-shamir](https://github.com/aryl-shamir)
 
 ---
 
