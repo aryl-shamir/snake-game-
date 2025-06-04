@@ -48,14 +48,16 @@ while is_game_on:
         serpent.head.ycor() > WALL_LIMIT or
         serpent.head.ycor() < -WALL_LIMIT
     ):
-        is_game_on = False
-        scoreboard.game_over()
+        scoreboard.reset()
+        serpent.reset_snake()
+
+
 
     # ---- Detect collision with tail ----
     for segment in serpent.segment[1:]:  # Exclude the head from checking
         if serpent.head.distance(segment) < COLLISION_DISTANCE:
-            is_game_on = False
-            scoreboard.game_over()
+            scoreboard.reset()
+            serpent.reset_snake()
 
 # ---- Wait for user to click before closing the window ----
 screen.exitonclick()

@@ -30,6 +30,13 @@ class Snake:
         new_turtle.goto(position)
         self.segment.append(new_turtle)
 
+    def reset_snake(self):
+        for seg in self.segment:
+            seg.goto((1000, 1000))
+        self.segment.clear()
+        self.create_snake()
+        self.head = self.segment[0]
+
     def extend_segment(self):
         """
         Extend the snake by adding a new segment at the last segment's current position.
@@ -67,3 +74,5 @@ class Snake:
         """Change the snake's direction to left, unless it's currently heading right."""
         if self.head.heading() != 0:
             self.head.setheading(180)
+
+

@@ -16,20 +16,30 @@ class Scoreboard(Turtle):
         self.color('white')
         self.goto((0, 280))  # Position at top center of the screen
         self.score = 0
+        self.highscore = 0
         self.update_scoreboard()
 
     def update_scoreboard(self):
         """
         Updates the scoreboard display with the current score.
         """
-        self.write(f"Score = {self.score}", False, align="center")
+        self.clear()
+        self.write(f"Score = {self.score} Highscore={self.highscore}", False, align="center")
 
-    def game_over(self):
-        """
-        Displays the 'Game Over' message at the center of the screen.
-        """
-        self.goto((0, 0))
-        self.write("Game Over", False, align="center")
+    def reset(self):
+        if self.score > self.highscore:
+            self.highscore = self.score
+        # After updating the highscore, we have to rest the score to 0
+        self.score = 0
+        self.update_scoreboard()
+
+
+    # def game_over(self):
+    #     """
+    #     Displays the 'Game Over' message at the center of the screen.
+    #     """
+    #     self.goto((0, 0))
+    #     self.write("Game Over", False, align="center")
 
     def increase_score(self):
         """
@@ -37,5 +47,4 @@ class Scoreboard(Turtle):
         Clears the previous score to avoid overlap.
         """
         self.score += 1
-        self.clear()
         self.update_scoreboard()
