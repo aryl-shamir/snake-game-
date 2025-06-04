@@ -95,6 +95,16 @@ This game was built step-by-step following a TODO list:
 
 ---
 
+### ✅ . Improvement on saving and displaying highscores
+- Create a reset function in the scorebaord file
+- set an attribute highscore
+- The reset function figures out if the score of the user is greater than the high score and if that is the case, then the highscore value is been update with the value of the current score
+
+---
+
+- If the head touches any part of its body (tail), the game ends.
+
+
 ## 👨‍💻 Author
 
 **Your Name**  
