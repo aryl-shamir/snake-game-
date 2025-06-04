@@ -95,11 +95,29 @@ This game was built step-by-step following a TODO list:
 
 ---
 
-### ✅ . Improvement on saving and displaying highscores
-- Create a reset function in the scorebaord file
-- set an attribute highscore
-- The reset function figures out if the score of the user is greater than the high score and if that is the case, then the highscore value is been update with the value of the current score
+### ✅ Improvement on Saving and Displaying High Scores
 
+1. **Create a `data.txt` File**
+   - Start by creating a file named `data.txt` and write `0` inside it.
+   - This file will persistently store the highest score ever achieved in the game.
+
+2. **Read the High Score from `data.txt`**
+   - In the `Scoreboard` class, use Python’s `with` statement to read the high score from `data.txt` at initialization.
+   - This ensures the game loads the previous high score each time it starts.
+
+3. **Add a `highscore` Attribute**
+   - Inside the `Scoreboard` class, define an attribute called `self.highscore` to hold the value read from `data.txt`.
+
+4. **Create a `reset()` Function**
+   - Add a method named `reset()` in the `Scoreboard` class.
+   - This function checks if the current score is greater than the existing high score:
+     - If true, update `self.highscore` with the new score.
+     - Then write the new high score back to `data.txt` using the `with` statement.
+   - Finally, reset `self.score` back to 0 and update the display.
+
+5. **Why Use the `with` Statement**
+   - Using `with` ensures that files are properly opened and closed, avoiding the need for manual file handling and preventing potential bugs or data loss.
+  
 ---
 
 - If the head touches any part of its body (tail), the game ends.
