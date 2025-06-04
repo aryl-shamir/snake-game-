@@ -1,5 +1,7 @@
 from turtle import Turtle
 
+
+
 class Scoreboard(Turtle):
     """
     A class to manage the scoreboard for the Snake game.
@@ -16,7 +18,8 @@ class Scoreboard(Turtle):
         self.color('white')
         self.goto((0, 280))  # Position at top center of the screen
         self.score = 0
-        self.highscore = 0
+        with open("data.txt") as data:
+            self.highscore = int(data.read())
         self.update_scoreboard()
 
     def update_scoreboard(self):
@@ -29,6 +32,9 @@ class Scoreboard(Turtle):
     def reset(self):
         if self.score > self.highscore:
             self.highscore = self.score
+            with open("data.txt", "w") as data:
+                data.write(str(self.highscore))
+
         # After updating the highscore, we have to rest the score to 0
         self.score = 0
         self.update_scoreboard()
