@@ -28,8 +28,8 @@ snake-game/
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/aryl-shamir/snake-game.git
-cd snake-game
+git clone https://github.com/aryl-shamir/snake-game-.git
+cd snake-game-
 ```
 
 2. Run the game:
