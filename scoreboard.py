@@ -1,7 +1,5 @@
 from turtle import Turtle
 
-
-
 class Scoreboard(Turtle):
     """
     A class to manage the scoreboard for the Snake game.
